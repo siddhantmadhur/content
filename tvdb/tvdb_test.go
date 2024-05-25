@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/siddhantmadhur/content/client"
+	"github.com/siddhantmadhur/content/types"
 )
 
 func TestFetch(t *testing.T) {
@@ -23,7 +23,7 @@ func TestFetch(t *testing.T) {
 		Title string `json:"title"`
 	}
 
-	err := tvdb.Fetch(client.FetchParams{
+	err := tvdb.Fetch(types.FetchParams{
 		Method:   "GET",
 		Endpoint: "/movie/11",
 	}, &result)

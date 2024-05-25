@@ -1,8 +1,14 @@
-package client
+package types
 
 type Genre struct {
 	Id   int    `json:"id"`
 	Name string `json:"name"`
+}
+
+type FetchParams struct {
+	Method   string   `json:"method"`
+	Endpoint string   `json:"endpoint"`
+	Queries  []string `json:"queries"`
 }
 
 type Movie struct {
@@ -27,12 +33,6 @@ type Show struct {
 	OriginCountry []string `json:"origin_country"`
 	PosterPath    string   `json:"poster_path"`
 	Overview      string   `json:"overview"`
-}
-
-type FetchParams struct {
-	Method   string
-	Endpoint string
-	Queries  []string
 }
 
 type MovieSearchResponse struct {

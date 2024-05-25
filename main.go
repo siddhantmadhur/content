@@ -1,9 +1,5 @@
 package main
 
-import (
-	"github.com/siddhantmadhur/content/client"
-)
-
-func NewClient(client client.Client) (client.Client, error) {
+func NewClient(client Client) (Client, error) {
 	return client, nil
 }

@@ -7,14 +7,14 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/siddhantmadhur/content/client"
+	"github.com/siddhantmadhur/content/types"
 )
 
 type TVDB struct {
 	ApiKey string `json:"api_read_access_token"`
 }
 
-func (t TVDB) Fetch(params client.FetchParams, result any) error {
+func (t TVDB) Fetch(params types.FetchParams, result any) error {
 	if params.Method == "" {
 		params.Method = "GET"
 	}
@@ -42,10 +42,10 @@ func (t TVDB) Fetch(params client.FetchParams, result any) error {
 	return err
 }
 
-func (t TVDB) GetFromId(Id int) (client.Movie, error) {
-	var result client.Movie
+func (t TVDB) GetFromId(Id int) (types.Movie, error) {
+	var result types.Movie
 
-	err := t.Fetch(client.FetchParams{
+	err := t.Fetch(types.FetchParams{
 		Endpoint: "/movie/11",
 	}, &result)
 

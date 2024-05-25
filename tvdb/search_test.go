@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/siddhantmadhur/content/client"
+	"github.com/siddhantmadhur/content/types"
 )
 
 func TestSearchMovie(t *testing.T) {
@@ -18,7 +18,7 @@ func TestSearchMovie(t *testing.T) {
 	var tvdb TVDB
 	tvdb.ApiKey = readToken
 
-	res, err := tvdb.SearchMovies(client.SearchParam{
+	res, err := tvdb.SearchMovies(types.SearchParam{
 		Query: "star wars empire strikes back",
 	})
 	if err != nil {
@@ -47,7 +47,7 @@ func TestSearchShows(t *testing.T) {
 	var tvdb TVDB
 	tvdb.ApiKey = readToken
 
-	res, err := tvdb.SearchShows(client.SearchParam{
+	res, err := tvdb.SearchShows(types.SearchParam{
 		Query: "modern family",
 	})
 	if err != nil {
