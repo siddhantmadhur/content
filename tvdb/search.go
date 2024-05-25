@@ -7,7 +7,7 @@ import (
 	"github.com/siddhantmadhur/content/client"
 )
 
-func (t *TVDB) SearchMovie(param client.SearchParam) (client.MovieSearchResponse, error) {
+func (t TVDB) SearchMovies(param client.SearchParam) (client.MovieSearchResponse, error) {
 
 	var response client.MovieSearchResponse
 	err := t.Fetch(client.FetchParams{
@@ -21,7 +21,7 @@ func (t *TVDB) SearchMovie(param client.SearchParam) (client.MovieSearchResponse
 	return response, nil
 }
 
-func (t *TVDB) SearchShows(param client.SearchParam) (client.ShowSearchResponse, error) {
+func (t TVDB) SearchShows(param client.SearchParam) (client.ShowSearchResponse, error) {
 
 	var response client.ShowSearchResponse
 	err := t.Fetch(client.FetchParams{

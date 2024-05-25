@@ -18,7 +18,7 @@ func TestSearchMovie(t *testing.T) {
 	var tvdb TVDB
 	tvdb.ApiKey = readToken
 
-	res, err := tvdb.SearchMovie(client.SearchParam{
+	res, err := tvdb.SearchMovies(client.SearchParam{
 		Query: "star wars empire strikes back",
 	})
 	if err != nil {

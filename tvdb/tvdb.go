@@ -14,7 +14,7 @@ type TVDB struct {
 	ApiKey string `json:"api_read_access_token"`
 }
 
-func (t *TVDB) Fetch(params client.FetchParams, result any) error {
+func (t TVDB) Fetch(params client.FetchParams, result any) error {
 	if params.Method == "" {
 		params.Method = "GET"
 	}
@@ -42,7 +42,7 @@ func (t *TVDB) Fetch(params client.FetchParams, result any) error {
 	return err
 }
 
-func (t *TVDB) GetFromId(Id int) (client.Movie, error) {
+func (t TVDB) GetFromId(Id int) (client.Movie, error) {
 	var result client.Movie
 
 	err := t.Fetch(client.FetchParams{
