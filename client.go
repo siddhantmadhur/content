@@ -8,3 +8,7 @@ type Client interface {
 	SearchShows(types.SearchParam) (types.ShowSearchResponse, error)
 	Authenticate() bool
 }
+
+func NewClient(client Client) (Client, error) {
+	return client, nil
+}
