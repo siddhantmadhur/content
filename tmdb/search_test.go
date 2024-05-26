@@ -1,4 +1,4 @@
-package tvdb
+package tmdb
 
 import (
 	"fmt"
@@ -15,7 +15,7 @@ func TestSearchMovie(t *testing.T) {
 		t.FailNow()
 	}
 
-	var tvdb TVDB
+	var tvdb Client
 	tvdb.ApiKey = readToken
 
 	res, err := tvdb.SearchMovies(types.SearchParam{
@@ -44,7 +44,7 @@ func TestSearchShows(t *testing.T) {
 		t.FailNow()
 	}
 
-	var tvdb TVDB
+	var tvdb Client
 	tvdb.ApiKey = readToken
 
 	res, err := tvdb.SearchShows(types.SearchParam{

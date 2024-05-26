@@ -1,4 +1,4 @@
-package tvdb
+package tmdb
 
 import (
 	"encoding/json"
@@ -10,11 +10,11 @@ import (
 	"github.com/siddhantmadhur/content/types"
 )
 
-type TVDB struct {
+type Client struct {
 	ApiKey string `json:"api_read_access_token"`
 }
 
-func (t TVDB) Fetch(params types.FetchParams, result any) error {
+func (t Client) Fetch(params types.FetchParams, result any) error {
 	if params.Method == "" {
 		params.Method = "GET"
 	}
@@ -42,7 +42,7 @@ func (t TVDB) Fetch(params types.FetchParams, result any) error {
 	return err
 }
 
-func (t TVDB) GetFromId(Id int) (types.Movie, error) {
+func (t Client) GetFromId(Id int) (types.Movie, error) {
 	var result types.Movie
 
 	err := t.Fetch(types.FetchParams{

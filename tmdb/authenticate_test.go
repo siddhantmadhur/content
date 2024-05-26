@@ -1,4 +1,4 @@
-package tvdb
+package tmdb
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ func TestAuthenticate(t *testing.T) {
 		t.FailNow()
 	}
 
-	var tvdb TVDB
+	var tvdb Client
 	tvdb.ApiKey = readToken
 
 	isAuthenticated := tvdb.Authenticate()

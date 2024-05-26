@@ -5,11 +5,11 @@ import (
 	"os"
 	"testing"
 
-	"github.com/siddhantmadhur/content/tvdb"
+	"github.com/siddhantmadhur/content/tmdb"
 )
 
 func TestTVDBClient(t *testing.T) {
-	client, err := NewClient(tvdb.TVDB{
+	client, err := NewClient(tmdb.Client{
 		ApiKey: os.Getenv("TVDB_READ_TOKEN"),
 	})
 

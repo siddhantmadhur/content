@@ -1,4 +1,4 @@
-package tvdb
+package tmdb
 
 import (
 	"fmt"
@@ -15,7 +15,7 @@ func TestFetch(t *testing.T) {
 		t.FailNow()
 	}
 
-	var tvdb TVDB
+	var tvdb Client
 	tvdb.ApiKey = readToken
 
 	var result struct {
@@ -47,7 +47,7 @@ func TestGetFromId(t *testing.T) {
 		t.FailNow()
 	}
 
-	var tvdb TVDB
+	var tvdb Client
 	tvdb.ApiKey = readToken
 
 	result, err := tvdb.GetFromId(11)

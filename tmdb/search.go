@@ -1,4 +1,4 @@
-package tvdb
+package tmdb
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"github.com/siddhantmadhur/content/types"
 )
 
-func (t TVDB) SearchMovies(param types.SearchParam) (types.MovieSearchResponse, error) {
+func (t Client) SearchMovies(param types.SearchParam) (types.MovieSearchResponse, error) {
 
 	var response types.MovieSearchResponse
 	err := t.Fetch(types.FetchParams{
@@ -21,7 +21,7 @@ func (t TVDB) SearchMovies(param types.SearchParam) (types.MovieSearchResponse, 
 	return response, nil
 }
 
-func (t TVDB) SearchShows(param types.SearchParam) (types.ShowSearchResponse, error) {
+func (t Client) SearchShows(param types.SearchParam) (types.ShowSearchResponse, error) {
 
 	var response types.ShowSearchResponse
 	err := t.Fetch(types.FetchParams{

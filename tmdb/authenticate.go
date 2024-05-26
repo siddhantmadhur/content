@@ -1,8 +1,8 @@
-package tvdb
+package tmdb
 
 import "github.com/siddhantmadhur/content/types"
 
-func (t TVDB) Authenticate() bool {
+func (t Client) Authenticate() bool {
 	var response struct {
 		Success bool `json:"success"`
 	}
