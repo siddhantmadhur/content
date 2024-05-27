@@ -1,4 +1,4 @@
-package main
+package content
 
 import "github.com/siddhantmadhur/content/types"
 
