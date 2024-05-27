@@ -9,21 +9,21 @@ import (
 )
 
 func TestFetch(t *testing.T) {
-	readToken := os.Getenv("TVDB_READ_TOKEN")
+	readToken := os.Getenv("TMDB_READ_TOKEN")
 	if readToken == "" {
-		fmt.Printf("[ERROR]: TVDB_READ_TOKEN env variable not provided.\n")
+		fmt.Printf("[ERROR]: TMDB_READ_TOKEN env variable not provided.\n")
 		t.FailNow()
 	}
 
-	var tvdb Client
-	tvdb.ApiKey = readToken
+	var tmdb Client
+	tmdb.ApiKey = readToken
 
 	var result struct {
 		Id    int    `json:"id"`
 		Title string `json:"title"`
 	}
 
-	err := tvdb.Fetch(types.FetchParams{
+	err := tmdb.Fetch(types.FetchParams{
 		Method:   "GET",
 		Endpoint: "/movie/11",
 	}, &result)
@@ -41,16 +41,16 @@ func TestFetch(t *testing.T) {
 }
 
 func TestGetFromId(t *testing.T) {
-	readToken := os.Getenv("TVDB_READ_TOKEN")
+	readToken := os.Getenv("TMDB_READ_TOKEN")
 	if readToken == "" {
-		fmt.Printf("[ERROR]: TVDB_READ_TOKEN env variable not provided.\n")
+		fmt.Printf("[ERROR]: TMDB_READ_TOKEN env variable not provided.\n")
 		t.FailNow()
 	}
 
-	var tvdb Client
-	tvdb.ApiKey = readToken
+	var tmdb Client
+	tmdb.ApiKey = readToken
 
-	result, err := tvdb.GetFromId(11)
+	result, err := tmdb.GetFromId(11)
 
 	if err != nil {
 		fmt.Printf("[ERROR]: %s\n", err.Error())

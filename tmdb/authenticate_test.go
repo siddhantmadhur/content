@@ -8,16 +8,16 @@ import (
 
 func TestAuthenticate(t *testing.T) {
 
-	readToken := os.Getenv("TVDB_READ_TOKEN")
+	readToken := os.Getenv("TMDB_READ_TOKEN")
 	if readToken == "" {
-		fmt.Printf("[ERROR]: TVDB_READ_TOKEN env variable not provided.\n")
+		fmt.Printf("[ERROR]: TMDB_READ_TOKEN env variable not provided.\n")
 		t.FailNow()
 	}
 
-	var tvdb Client
-	tvdb.ApiKey = readToken
+	var tmdb Client
+	tmdb.ApiKey = readToken
 
-	isAuthenticated := tvdb.Authenticate()
+	isAuthenticated := tmdb.Authenticate()
 	if !isAuthenticated {
 		fmt.Printf("[ERROR] Could not authenticate user\n")
 		t.FailNow()

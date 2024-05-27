@@ -9,16 +9,16 @@ import (
 )
 
 func TestSearchMovie(t *testing.T) {
-	readToken := os.Getenv("TVDB_READ_TOKEN")
+	readToken := os.Getenv("TMDB_READ_TOKEN")
 	if readToken == "" {
-		fmt.Printf("[ERROR]: TVDB_READ_TOKEN env variable not provided.\n")
+		fmt.Printf("[ERROR]: TMDB_READ_TOKEN env variable not provided.\n")
 		t.FailNow()
 	}
 
-	var tvdb Client
-	tvdb.ApiKey = readToken
+	var tmdb Client
+	tmdb.ApiKey = readToken
 
-	res, err := tvdb.SearchMovies(types.SearchParam{
+	res, err := tmdb.SearchMovies(types.SearchParam{
 		Query: "star wars empire strikes back",
 	})
 	if err != nil {
@@ -38,16 +38,16 @@ func TestSearchMovie(t *testing.T) {
 }
 
 func TestSearchShows(t *testing.T) {
-	readToken := os.Getenv("TVDB_READ_TOKEN")
+	readToken := os.Getenv("TMDB_READ_TOKEN")
 	if readToken == "" {
-		fmt.Printf("[ERROR]: TVDB_READ_TOKEN env variable not provided.\n")
+		fmt.Printf("[ERROR]: TMDB_READ_TOKEN env variable not provided.\n")
 		t.FailNow()
 	}
 
-	var tvdb Client
-	tvdb.ApiKey = readToken
+	var tmdb Client
+	tmdb.ApiKey = readToken
 
-	res, err := tvdb.SearchShows(types.SearchParam{
+	res, err := tmdb.SearchShows(types.SearchParam{
 		Query: "modern family",
 	})
 	if err != nil {

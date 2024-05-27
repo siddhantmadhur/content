@@ -8,9 +8,9 @@ import (
 	"github.com/siddhantmadhur/content/tmdb"
 )
 
-func TestTVDBClient(t *testing.T) {
+func TestTMDBClient(t *testing.T) {
 	client, err := NewClient(tmdb.Client{
-		ApiKey: os.Getenv("TVDB_READ_TOKEN"),
+		ApiKey: os.Getenv("TMDB_READ_TOKEN"),
 	})
 
 	if err != nil {
